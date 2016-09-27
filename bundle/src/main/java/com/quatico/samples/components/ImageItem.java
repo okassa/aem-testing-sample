@@ -1,9 +1,13 @@
-package com.quatico.samples.model;
+package com.quatico.samples.components;
 
 
 import java.io.IOException;
 import java.io.StringWriter;
 
+import com.quatico.samples.AbstractItem;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.experimental.Accessors;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ValueMap;
@@ -11,6 +15,9 @@ import org.apache.sling.api.resource.ValueMap;
 import com.day.cq.wcm.foundation.Image;
 
 
+@Getter
+@Setter
+@Accessors(chain = true)
 public class ImageItem extends AbstractItem<ImageItem> {
 	
 	private String        caption;
@@ -28,65 +35,6 @@ public class ImageItem extends AbstractItem<ImageItem> {
 		this.imageSize = ImageSize.NORMAL;
 		this.imagePosition = ImagePosition.LEFT_ABOVE;
 		this.target = StringUtils.EMPTY;
-	}
-	
-	public ImageItem setCaption(String value) {
-		this.caption = value;
-		return this;
-	}
-	
-	public String getCaption() {
-		return caption;
-	}
-	
-	public ImageItem setAlt(String value) {
-		this.alt = value;
-		return this;
-	}
-	
-	public String getAlt() {
-		return alt;
-	}
-	
-	public ImageItem setSource(String value) {
-		this.source = value;
-		return this;
-	}
-	
-	public String getSource() {
-		return source;
-	}
-	
-	public ImageItem setTarget(String value) {
-		this.target = value;
-		return this;
-	}
-	
-	public String getTarget() {
-		return target;
-	}
-	
-	public ImageItem setImageData(Image value) {
-		this.imageData = value;
-		return this;
-	}
-	
-	public Image getImageData() {
-		return imageData;
-	}
-	
-	public ImageItem setImageSize(ImageSize imageSize) {
-		this.imageSize = imageSize;
-		return this;
-	}
-	
-	public ImageItem setImagePosition(ImagePosition imagePosition) {
-		this.imagePosition = imagePosition;
-		return this;
-	}
-	
-	public ImagePosition getImagePosition() {
-		return imagePosition;
 	}
 	
 	public String getHtml() throws IOException {
@@ -142,10 +90,6 @@ public class ImageItem extends AbstractItem<ImageItem> {
 	@Override
 	public boolean isValid() {
 		return imageData != null && imageData.hasContent();
-	}
-	
-	public ImageSize getImageSize() {
-		return imageSize;
 	}
 	
 	public enum ImageSize {

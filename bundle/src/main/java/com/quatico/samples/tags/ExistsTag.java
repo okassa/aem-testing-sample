@@ -1,7 +1,7 @@
 package com.quatico.samples.tags;
 
 
-import com.quatico.samples.model.AbstractItem;
+import com.quatico.samples.AbstractItem;
 
 import java.lang.reflect.Array;
 import java.util.Collection;

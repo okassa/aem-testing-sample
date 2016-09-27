@@ -5,7 +5,6 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 
 import com.quatico.samples.UnitTestBase;
-import com.quatico.samples.model.ImageItem;
 
 import org.apache.sling.api.resource.Resource;
 import org.junit.Test;

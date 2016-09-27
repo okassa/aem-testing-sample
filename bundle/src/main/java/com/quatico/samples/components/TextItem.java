@@ -1,6 +1,10 @@
-package com.quatico.samples.model;
+package com.quatico.samples.components;
 
 
+import com.quatico.samples.AbstractItem;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.experimental.Accessors;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ValueMap;
@@ -8,6 +12,9 @@ import org.apache.sling.api.resource.ValueMap;
 import com.day.cq.commons.jcr.JcrConstants;
 
 
+@Getter
+@Setter
+@Accessors(chain = true)
 public class TextItem extends AbstractItem<TextItem> {
 	
 	private String  title;
@@ -18,33 +25,6 @@ public class TextItem extends AbstractItem<TextItem> {
 		this.title = StringUtils.EMPTY;
 		this.text = StringUtils.EMPTY;
 		this.isRichText = false;
-	}
-	
-	public String getText() {
-		return this.text;
-	}
-	
-	public TextItem setText(String text) {
-		this.text = text;
-		return this;
-	}
-	
-	public Boolean getIsRichText() {
-		return this.isRichText;
-	}
-	
-	public TextItem setIsRichText(Boolean isRichText) {
-		this.isRichText = isRichText;
-		return this;
-	}
-	
-	public String getTitle() {
-		return this.title;
-	}
-	
-	public TextItem setTitle(String title) {
-		this.title = title;
-		return this;
 	}
 	
 	public TextItem fill(Resource resource) {

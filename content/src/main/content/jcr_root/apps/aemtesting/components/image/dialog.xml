@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+          jcr:primaryType="cq:Dialog"
+          xtype="tabpanel">
+	<items jcr:primaryType="cq:WidgetCollection">
+		<image
+				jcr:primaryType="cq:Widget"
+				path="/libs/quatico/base/components/content/image/image/local.infinity.json"
+				xtype="cqinclude" />
+		<advanced
+				jcr:primaryType="cq:Widget"
+				title="Erweiterte Bildeigenschaften"
+				xtype="panel">
+			<items jcr:primaryType="cq:WidgetCollection">
+				<alt
+						jcr:primaryType="cq:Widget"
+						fieldLabel="Alternativer Text"
+						fieldDescription="Alternativer Bildtext für Sehbehinderte."
+						name="./alt"
+						xtype="textfield" />
+				<caption
+						jcr:primaryType="cq:Widget"
+						fieldLabel="Bildunterschrift"
+						fieldDescription="Die Bildunterschrift, die unterhalb des Bildes ausgegeben wird."
+						name="./caption"
+						xtype="textfield" />
+				<target
+						jcr:primaryType="cq:Widget"
+						fieldLabel="Link"
+						fieldDescription="Verlinkung für das Bild."
+						name="./target"
+						xtype="pathfield" />
+				<enableFullView
+						jcr:primaryType="cq:Widget"
+						fieldLabel="Vollbild ermöglichen"
+						fieldDescription="Bestimmt, ob der Lightbox Link dargestellt werden soll"
+						name="./enableFullView"
+						inputValue="true"
+						type="checkbox"
+						xtype="selection" />
+			</items>
+		</advanced>
+	</items>
+</jcr:root>

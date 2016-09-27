@@ -2,9 +2,8 @@ package com.quatico.samples.components;
 
 
 import com.quatico.samples.AbstractController;
-import com.quatico.samples.model.ImageItem;
-import com.quatico.samples.model.ImageItem.ImagePosition;
-import com.quatico.samples.model.ImageItem.ImageSize;
+import com.quatico.samples.components.ImageItem.ImagePosition;
+import com.quatico.samples.components.ImageItem.ImageSize;
 
 import org.apache.commons.lang3.StringEscapeUtils;
 import org.apache.commons.lang3.StringUtils;
@@ -14,9 +13,7 @@ public class TextImageController extends AbstractController<TextImageItem> {
 	
 	@Override
 	protected void init() {
-		if (this.content == null) {
-			this.content = new TextImageItem().fill(getResource());
-		}
+		this.content = new TextImageItem().fill(getResource());
 	}
 	
 	public boolean isShowTitleBelow() {

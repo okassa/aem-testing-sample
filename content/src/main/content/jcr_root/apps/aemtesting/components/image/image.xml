@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0"
+          jcr:primaryType="nt:unstructured">
+	<local
+			jcr:primaryType="cq:Widget"
+			title="Image"
+			cropParameter="./imageCrop"
+			mapParameter=""
+			rotateParameter=""
+			allowUpload="{Boolean}false"
+			ddGroups="[media]"
+			fileReferenceParameter="./fileReference"
+			name="./file"
+			requestSuffix=".ewzimg.png"
+			xtype="html5smartimage" />
+</jcr:root>

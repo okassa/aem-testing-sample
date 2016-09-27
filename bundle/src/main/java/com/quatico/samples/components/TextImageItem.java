@@ -1,26 +1,22 @@
 package com.quatico.samples.components;
 
 
-import com.quatico.samples.model.AbstractItem;
-import com.quatico.samples.model.ImageItem;
-import com.quatico.samples.model.TextItem;
+import com.quatico.samples.AbstractItem;
 
+import lombok.Getter;
+import lombok.Setter;
+import lombok.experimental.Accessors;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.sling.api.resource.Resource;
 
 
+@Getter
+@Setter
+@Accessors(chain = true)
 public class TextImageItem extends AbstractItem<TextImageItem> {
 	
 	private TextItem text;
 	private ImageItem image;
-	
-	public TextItem getText() {
-		return text;
-	}
-	
-	public ImageItem getImage() {
-		return image;
-	}
 	
 	@Override
 	public TextImageItem fill(Resource resource) {

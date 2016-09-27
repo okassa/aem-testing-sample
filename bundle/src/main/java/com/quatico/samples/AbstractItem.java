@@ -1,10 +1,16 @@
-package com.quatico.samples.model;
+package com.quatico.samples;
 
 
+import lombok.Getter;
+import lombok.Setter;
+import lombok.experimental.Accessors;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.sling.api.resource.Resource;
 
 
+@Getter
+@Setter
+@Accessors(chain = true)
 public abstract class AbstractItem<T extends AbstractItem<T>> {
 	public static final String NULL_PATH = "DOESNOTEXIST";
 	
@@ -12,10 +18,6 @@ public abstract class AbstractItem<T extends AbstractItem<T>> {
 	
 	public AbstractItem() {
 		this.path = StringUtils.EMPTY;
-	}
-	
-	public String getPath() {
-		return this.path;
 	}
 	
 	public <R extends AbstractItem<T>> R setPath(String path) {
