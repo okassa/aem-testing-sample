@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:rep="internal"
+          jcr:mixinTypes="[rep:AccessControllable,rep:RepoAccessControllable]"
+          jcr:primaryType="rep:root"
+          sling:resourceType="sling:redirect"
+          sling:target="/index.html" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://sling.apache.org/jcr/sling/1.0 ">
+	<bin />
+	<rep:repoPolicy />
+	<rep:policy />
+	<jcr:system />
+	<var />
+	<libs />
+	<etc />
+	<apps />
+	<home />
+	<tmp />
+	<content />
+</jcr:root>

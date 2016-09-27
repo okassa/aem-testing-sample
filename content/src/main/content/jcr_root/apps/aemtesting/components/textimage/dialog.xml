@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+          jcr:primaryType="cq:Dialog"
+          height="550"
+          helpPath="en/cq/current/wcm/default_components.html#Text Image"
+          xtype="dialog">
+	<items jcr:primaryType="cq:WidgetCollection">
+		<tabs
+			jcr:primaryType="cq:TabPanel"
+			activeTab="{Long}0"
+			xtype="tabpanel">
+			<items jcr:primaryType="cq:WidgetCollection">
+				<text
+					jcr:primaryType="cq:Widget"
+					anchor="100%"
+					title="Text"
+					activeTab="{Long}0"
+					xtype="panel">
+					<items jcr:primaryType="cq:WidgetCollection">
+						<title
+							jcr:primaryType="cq:Widget"
+							fieldLabel="Titel"
+							fieldDescription="Optionaler Titel für den Textabschnitt"
+							name="./title"
+							xtype="textfield" />
+						<link
+							jcr:primaryType="cq:Widget"
+							fieldLabel="Link"
+							fieldDescription="Link für Titel und Bild"
+							name="./url"
+							xtype="pathfield" />
+						<text_label
+							jcr:primaryType="cq:Widget"
+							hideLabel="true"
+							fieldLabel="Text"
+							html="\{[this.fieldLabel]}"
+							xtype="ownerdraw" />
+						<text
+							jcr:primaryType="cq:Widget"
+							editElementQuery="div[class=&quot;text&quot;]"
+							hideLabel="true"
+							height="280"
+							name="./text"
+							xtype="richtext">
+							<rtePlugins
+								jcr:primaryType="cq:Widget"
+								xtype="cqinclude"
+								path="/libs/quatico/base/dialogs/richtext/default/rtePlugins.infinity.json" />
+						</text>
+						<richFlag
+							jcr:primaryType="cq:Widget"
+							ignoreData="{Boolean}true"
+							name="./isRichText"
+							value="true"
+							xtype="hidden" />
+						<text_description
+							jcr:primaryType="cq:Widget"
+							hideLabel="true"
+							fieldLabel="Mehrzeiliger RichText mit beliebigen Formatierungen"
+							html="&lt;div class='x-form-item-description'&gt;{[this.fieldLabel]}&lt;/div&gt;"
+							xtype="ownerdraw" />
+					</items>
+				</text>
+				<image
+					jcr:primaryType="cq:Widget"
+					path="/libs/quatico/base/dialogs/image/subnode.infinity.json"
+					xtype="cqinclude" />
+				<imageattributes
+					jcr:primaryType="cq:Widget"
+					title="Erweiterte Bildeigenschaften"
+					xtype="panel">
+					<items jcr:primaryType="cq:WidgetCollection">
+						<resType
+							jcr:primaryType="cq:Widget"
+							ignoreData="{Boolean}true"
+							name="./image/sling:resourceType"
+							value="quatico/base/components/content/image"
+							xtype="hidden" />
+						<imageSize
+							jcr:primaryType="cq:Widget"
+							fieldLabel="Bildgrösse"
+							fieldDescription="Legt fest, ob der Text um das Bild herum floatet oder in einer eigenen Spalte dargestellt wird."
+							name="./image/imageSize"
+							defaultValue="normal"
+							type="select"
+							xtype="selection">
+							<options jcr:primaryType="cq:WidgetCollection">
+								<left
+									jcr:primaryType="nt:unstructured"
+									text="normal"
+									value="normal" />
+								<right
+									jcr:primaryType="nt:unstructured"
+									text="small"
+									value="small" />
+							</options>
+						</imageSize>
+						<enableFullView
+							jcr:primaryType="cq:Widget"
+							fieldLabel="Vollansicht"
+							fieldDescription="Vollbild darstellen. Legt fest, ob das Vollbild dargestellt werden soll."
+							name="./image/enableFullView"
+							inputValue="true"
+							type="checkbox"
+							xtype="selection" />
+						<fullViewMaxWidth
+							jcr:primaryType="cq:Widget"
+							fieldLabel="Max. Breite Vollansicht"
+							fieldDescription="Breite des Vollbildes, falls nicht die Standardbreite verwendet werden soll."
+							name="./image/fullViewMaxWidth"
+							allowNegative="{Boolean}false"
+							allowDecimals="{Boolean}false"
+							maxValue="1024"
+							xtype="numberfield" />
+						<imagePosition
+							jcr:primaryType="cq:Widget"
+							fieldLabel="Bildposition"
+							fieldDescription="Position des Bildes relativ zum Text wenn fliessend, ansonsten oberhalb bzw. unterhalb vom Titel."
+							name="./image/imagePosition"
+							defaultValue="left"
+							type="select"
+							xtype="selection">
+							<options jcr:primaryType="cq:WidgetCollection">
+								<left
+									jcr:primaryType="nt:unstructured"
+									text="links/oberhalb"
+									value="left" />
+								<right
+									jcr:primaryType="nt:unstructured"
+									text="rechts/unterhalb"
+									value="right" />
+							</options>
+						</imagePosition>
+						<caption
+							jcr:primaryType="cq:Widget"
+							fieldLabel="Legendentext"
+							fieldDescription="Der Text, der unterhalb des Bildes dargestellt wird."
+							name="./image/caption"
+							xtype="textarea" />
+						<alt
+							jcr:primaryType="cq:Widget"
+							fieldDescription="Alternativer Text für das Bild. Falls keiner festgelegt ist, wird die Caption verwendet. Nicht sichtbar."
+							fieldLabel="Kurzbeschreibung"
+							name="./image/alt"
+							xtype="textarea" />
+						<source
+							jcr:primaryType="cq:Widget"
+							fieldLabel="Quellenangabe"
+							fieldDescription="Die Quelle des Bildes (aus Metadaten des Bildes für DAM Bilder)."
+							name="./image/source"
+							xtype="textfield" />
+					</items>
+				</imageattributes>
+			</items>
+		</tabs>
+	</items>
+</jcr:root>
