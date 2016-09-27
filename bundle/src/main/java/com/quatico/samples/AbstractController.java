@@ -21,9 +21,9 @@ public abstract class AbstractController<T> implements Controller<T> {
 	private   SlingHttpServletRequest  request;
 	
 	@SuppressWarnings("unchecked")
-	public <R extends Controller<T>> R setup(PageContext jspPageContext) {
-		this.pageContext = jspPageContext;
-		this.request = TagUtil.getRequest(jspPageContext);
+	public <R extends Controller<T>> R setup(PageContext pageContext) {
+		this.pageContext = pageContext;
+		this.request = TagUtil.getRequest(pageContext);
 		
 		init();
 		return (R) this;

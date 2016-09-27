@@ -23,7 +23,11 @@ public class UnitTestBase {
 	public void setUpTestContext() throws Exception {
 		this.client = new AemClient(Type.Unit).startUp();
 		Resources resources = new Resources(client);
-		$ = SetupFactory.create(ITestSetup.class).getSetup(client, resources, new Pages(client), new AppComponents(resources, client), new Assets(client));
+		$ = SetupFactory.create(ITestSetup.class).getSetup(client,
+				resources,
+				new Pages(client),
+				new AppComponents(resources, client),
+				new Assets(client));
 	}
 	
 	@After
